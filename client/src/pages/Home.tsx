@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Factory, DollarSign, Globe, Battery, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TrendingUp, Factory, DollarSign, Globe, Battery, Zap, Download } from "lucide-react";
 
 export default function Home() {
   return (
@@ -18,6 +19,23 @@ export default function Home() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             How China's electric vehicle revolution is transforming the automotive industry and challenging established players worldwide
           </p>
+          <div className="flex justify-center mt-8">
+            <Button 
+              size="lg" 
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg font-semibold"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/fleet-forward-slides.pdf';
+                link.download = 'Fleet Forward 2025 - Chinese EV Impact Slides.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Download Slides
+            </Button>
+          </div>
         </div>
       </header>
 
