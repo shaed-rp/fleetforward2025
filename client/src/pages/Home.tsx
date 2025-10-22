@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Factory, DollarSign, Globe, Battery, Zap, Download } from "lucide-react";
+import { TrendingUp, Factory, DollarSign, Globe, Battery, Zap, Download, Play } from "lucide-react";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             How China's electric vehicle revolution is transforming the automotive industry and challenging established players worldwide
           </p>
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <Button 
               size="lg" 
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg font-semibold"
@@ -34,6 +34,17 @@ export default function Home() {
             >
               <Download className="mr-2 h-5 w-5" />
               Download Slides
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-3 text-lg font-semibold"
+              onClick={() => {
+                window.open('https://open.spotify.com/episode/1cPjXA0j5RIeIzdlbyrkrH?si=FVx8KJL-SpCb-mhBaCBJRQ', '_blank', 'noopener,noreferrer');
+              }}
+            >
+              <Play className="mr-2 h-5 w-5" />
+              Listen to Podcast
             </Button>
           </div>
         </div>
